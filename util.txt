@@ -1,0 +1,65 @@
+// function createMenu() {
+//   const breakfast = menu.filter((item) => item.meal === 'breakfast');
+
+//   breakfast.forEach((item) => {
+//     const menuItem = document.createElement('div');
+//     menuItem.classList.add('menu-item');
+//     menuItem.innerHTML = `
+//       <div class="item__image">
+//           <img src="${item.src}" alt="">
+//       </div>
+//       <div class="item__info">
+//           <header class="info__header">
+//               <h4 class="item__title">${item.title}</h4>
+//               <h4 class="item__price">${item.price}</h4>
+//           </header>
+//           <div class="info__content">
+//               <p>${item.content}</p>
+//           </div>
+//       </div>
+//   `;
+//     sectionCenter.appendChild(menuItem);
+//   });
+
+//   console.log('Breakfast', breakfast);
+// }
+
+// breakfastBtn.addEventListener('click', createMenu);
+
+
+===============================================================
+
+function createMenu(meal) {
+  menu
+    .filter((item) => item.meal === `${meal}`)
+    .forEach((item) => {
+      const menuItem = document.createElement('div');
+      menuItem.classList.add('menu-item');
+      menuItem.innerHTML = `
+      <div class="item__image">
+          <img src="${item.src}" alt="">
+      </div>
+      <div class="item__info">
+          <header class="info__header">
+              <h4 class="item__title">${item.title}</h4>
+              <h4 class="item__price">${item.price}</h4>
+          </header>
+          <div class="info__content">
+              <p>${item.content}</p>
+          </div>
+      </div>
+  `;
+      sectionCenter.appendChild(menuItem);
+    });
+}
+
+
+===============================================================
+
+
+
+function createMenu(meal) {
+  menu
+    .filter((item) => item.meal === `${meal}`)
+    .forEach((item) => addElements(item));
+}
